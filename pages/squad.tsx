@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Flex, Button, Heading, ListItem, List } from '@chakra-ui/react';
 import { randomizeNames } from '../utils';
 // import { names } from '../public/playerData/names';
 
@@ -16,22 +17,26 @@ export default function Squad({ players }) {
   };
 
   return (
-    <>
-      <div>
-        <h1>Team A:</h1>
+    <Flex direction="column" alignItems="center">
+      <Flex direction="column" alignItems="center">
+        <Heading>Team A:</Heading>
           {teamA.map(player => (
-            <li key={player.id}>{player.firstName} {player.lastName}</li>
+            <List>
+              <ListItem key={player.id}>{player.firstName} {player.lastName}</ListItem>
+            </List>
           ))}
-        <h1>Team B:</h1>
+        <Heading>Team B:</Heading>
         {teamB.map(player => (
-          <li key={player.id}>{player.firstName} {player.lastName}</li>
+          <List>
+            <ListItem key={player.id}>{player.firstName} {player.lastName}</ListItem>
+          </List>
         ))}
-      </div>
+      </Flex>
       <br></br>
-      <div>
-          <button onClick={onChangeTeams}>Randomize Teams</button>
-      </div>
-    </>
+      <Flex direction="column" alignItems="center">
+          <Button onClick={onChangeTeams}>Randomize Teams</Button>
+      </Flex>
+    </Flex>
   )
 }
 
