@@ -12,20 +12,20 @@ export default function Squad({ players }) {
 
     const namesRandomOrder = randomizeNames(players);
 
-    setTeamA(namesRandomOrder.filter((_, index) => index < 3))
-    setTeamB(namesRandomOrder.filter((_, index) => index >= 3))
+    setTeamA(namesRandomOrder.filter((_: any, index: number) => index < 3))
+    setTeamB(namesRandomOrder.filter((_: any, index: number) => index >= 3))
   };
 
   return (
     <Flex direction="column" alignItems="center">
-      <Flex direction="column" alignItems="center">
-        <Heading>Team A:</Heading>
+      <Flex direction="column" alignItems="center" p={12}>
+        <Heading>Team A</Heading>
           {teamA.map(player => (
             <List>
               <ListItem key={player.id}>{player.firstName} {player.lastName}</ListItem>
             </List>
           ))}
-        <Heading>Team B:</Heading>
+        <Heading pt={4}>Team B</Heading>
         {teamB.map(player => (
           <List>
             <ListItem key={player.id}>{player.firstName} {player.lastName}</ListItem>

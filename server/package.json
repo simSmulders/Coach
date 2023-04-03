@@ -1,0 +1,15 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "server Coach app",
+  "main": "index.js",
+  "repository": "git@github.com:simSmulders/Coach.git",
+  "author": "Simon Smulders",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.6.0"
+  }
+}
